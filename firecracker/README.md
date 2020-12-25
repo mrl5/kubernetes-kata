@@ -1,5 +1,10 @@
 # Firecracker kata
 
+Firecracker runs workloads in lightweight virtual machines, called microVMs,
+which combine the security and isolation properties provided by hardware
+virtualization technology with the speed and flexibility of containers.
+
+
 ## Getting kernel and rootfs
 references: [firecracker getting started]
 ```
