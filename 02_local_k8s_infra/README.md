@@ -27,6 +27,8 @@ cat <<EOF | $(go env GOPATH)/bin/kind create cluster --name kind --config=-
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 networking:
+  # WARNING: It is _strongly_ recommended that you keep this the default
+  # (127.0.0.1) for security reasons. However it is possible to change this.
   apiServerAddress: "172.16.0.1"
   apiServerPort: 6443
 EOF
@@ -124,7 +126,7 @@ rc-update add kubelet default
 ```
 improving entropy
 ```
-echo $(cat /proc/sys/kernel/random/entropy_avail)/$(cat/proc/sys/kernel/random/poolsize)
+echo $(cat /proc/sys/kernel/random/entropy_avail)/$(cat /proc/sys/kernel/random/poolsize)
 
 apk add rng-tools
 curl -s https://raw.githubusercontent.com/funtoo/nokit/1.4-release/sys-apps/rng-tools/files/rngd-initd-6.7-r1 \
