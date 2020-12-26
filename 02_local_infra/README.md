@@ -122,6 +122,19 @@ sed -i 's/--network-plugin=cni //' /var/lib/kubelet/kubeadm-flags.env
 /etc/init.d/kubelet restart
 rc-update add kubelet default
 ```
+improving entropy
+```
+echo $(cat /proc/sys/kernel/random/entropy_avail)/$(cat/proc/sys/kernel/random/poolsize)
+
+apk add rng-tools
+curl -s https://raw.githubusercontent.com/funtoo/nokit/1.4-release/sys-apps/rng-tools/files/rngd-initd-6.7-r1 \
+    > /etc/init.d/rngd
+/etc/init.d/rngd start
+rc-update add rngd boot
+
+echo $(cat /proc/sys/kernel/random/entropy_avail)/$(cat /proc/sys/kernel/random/poolsize)
+```
+
 
 ## Verification
 ```
