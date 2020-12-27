@@ -68,6 +68,7 @@ kubectl describe nodes
 ## There is more
 - https://www.youtube.com/watch?v=28CqZZFdwBY
 - https://knative.dev/docs/serving/autoscaling/concurrency/
+- https://knative.dev/docs/serving/cluster-local-route/
 
 
 
