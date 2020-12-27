@@ -53,6 +53,7 @@ curl $(glooctl proxy url)/all-pets
 [gloo edge clean up]
 ```
 glooctl uninstall --all
+kubectl delete -f https://raw.githubusercontent.com/solo-io/gloo/v1.2.9/example/petstore/petstore.yaml
 ```
 
 ## Post mortem
